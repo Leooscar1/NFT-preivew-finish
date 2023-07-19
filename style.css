@@ -1,0 +1,263 @@
+/* Pseudo-code with Comments */
+
+/* Define custom colors using HSL values */
+:root {
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --Very-dark-blue-main-BG: hsl(217, 54%, 11%);
+    --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
+    --White: hsl(0, 0%, 100%);
+    --Very-dark-blue-line: hsl(215, 32%, 27%);
+  }
+  
+  /* Reset default margin and padding for all elements */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set up the body element */
+  body {
+    /* Center and align items vertically in the container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* Set the background color to the defined very dark blue for the main background */
+    background-color: var(--Very-dark-blue-main-BG);
+    
+    /* Set the minimum height of the body to 100% of the viewport height */
+    min-height: 100vh;
+    
+    /* Include the padding and border in the element's total width and height */
+    box-sizing: border-box;
+  }
+  
+  /* Styles for the card container */
+  .card-1 {
+    /* Set the background color to the defined very dark blue for the card background */
+    background-color: var(--Very-dark-blue-card-BG);
+    
+    /* Add rounded corners to the card container */
+    border-radius: 10px;
+    
+    /* Set the height and width of the card container */
+    height: 39rem;
+    width: 21rem;
+    
+    /* Add padding to the card container */
+    padding: 25px;
+  }
+  
+  /* Styles for the product image container */
+  .img-eq {
+    /* Set the height and width of the product image container */
+    height: 21rem;
+    width: 20rem;
+    
+    /* Add margin to the left and bottom of the product image container */
+    margin-left: .5rem;
+    margin-bottom: 15px;
+    
+    /* Add rounded corners to the product image container */
+    border-radius: 10px;
+    
+    /* Set the cursor to change to a pointer on hover */
+    cursor: pointer;
+    
+    /* Set the product image container to position relative */
+    position: relative;
+    
+    /* Hide any content that overflows the product image container */
+    overflow: hidden;
+  }
+  
+  /* Styles for the card product image */
+  .card-product-img {
+    /* Set the product image container to position relative */
+    position: relative;
+    
+    /* Add rounded corners to the product image container */
+    border-radius: 8px;
+    
+    /* Hide any content that overflows the product image container */
+    overflow: hidden;
+    
+    /* Set the cursor to change to a pointer on hover */
+    cursor: pointer;
+  }
+  
+  /* Styles for the pseudo-element after the card product image */
+  .card-product-img::after {
+    /* Define a custom aqua color with reduced opacity */
+    --aqua: hsla(178, 100%, 50%, 0.5);
+    
+    /* Use the icon-view.svg as the content for the pseudo-element */
+    content: url(./images/icon-view.svg);
+    
+    /* Set the background color of the pseudo-element to the custom aqua color */
+    background: var(--aqua);
+    
+    /* Set the pseudo-element to position absolute and cover the entire product image container */
+    position: absolute;
+    inset: 0;
+    
+    /* Center the content inside the pseudo-element */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Hide the pseudo-element by default */
+    opacity: 0;
+    
+    /* Add a smooth transition effect for all CSS properties with a duration of 0.25 seconds */
+    transition: all 0.25s ease;
+    
+    /* Set the height and width of the pseudo-element */
+    height: 21rem;
+    width: 20rem;
+    
+    /* Add rounded corners to the pseudo-element */
+    border-radius: 10px;
+    
+    /* Add margin to the left of the pseudo-element */
+    margin-left: 7px;
+  }
+  
+  /* Styles for the hover effect on the pseudo-element */
+  .card-product-img:hover::after {
+    /* Change the background color of the pseudo-element to the custom cyan color on hover */
+    background-color: var(--Cyan);
+    
+    /* Make the pseudo-element visible on hover by increasing the opacity */
+    opacity: 0.7;
+  }
+  
+  /* Styles for the card product image's inner image */
+  .card__product-img img {
+    /* Set the width of the inner image to 100% of its container */
+    width: 100%;
+    
+    /* Display the inner image as a block-level element */
+    display: block;
+  }
+  
+  /* Styles for the title section */
+  .title {
+    /* Set the text color to white */
+    color: var(--White);
+    
+    /* Use the 'Outfit' font family for the title text */
+    font-family: 'Outfit', sans-serif;
+    
+    /* Add margin at the bottom of the title */
+    margin-bottom: 20px;
+  }
+
+/* Title hover  */
+.title:hover{
+    color: var(--Cyan);
+}
+/* Text hover */
+.sub2-txt:hover{
+    color: var(--Cyan);
+}
+
+  /* Styles for the text section */
+.txt {
+    /* Use the 'Outfit' font family for the text */
+    font-family: 'Outfit', sans-serif;
+    
+    /* Set the text color to the custom soft blue color */
+    color: var(--Soft-blue);
+    
+    /* Set the font size and line height for the text */
+    font-size: 18px;
+    line-height: 1.9rem;
+  }
+  
+  /* Styles for the amount section */
+  .amount {
+    /* Display the amount text and icon horizontally */
+    display: flex;
+    flex-direction: row;
+    
+    /* Set the gap between the amount text and icon */
+    gap: 7rem;
+    
+    /* Set the text color to the custom cyan color */
+    color: var(--Cyan);
+    
+    /* Use the 'Outfit' font family for the amount text */
+    font-family: 'Outfit', sans-serif;
+    
+    /* Add padding around the amount section */
+    padding: 12px;
+    
+    /* Set the font size for the amount text */
+    font-size: 15px;
+  }
+  
+  /* Styles for the amount's icon images */
+  .amount img {
+    /* Float the icon images to the left */
+    float: left;
+    
+    /* Add margin to the right of the icon images */
+    margin-right: 10px;
+  }
+  
+  /* Styles for the info section */
+  .info {
+    /* Display the info text and author image horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Set the gap between the info text and author image */
+    gap: 1rem;
+    
+    /* Set the text color to white */
+    color: var(--White);
+    
+    /* Use the 'Outfit' font family for the info text */
+    font-family: 'Outfit', sans-serif;
+    
+    /* Set the font size for the info text */
+    font-size: 16px;
+    
+    /* Float the info section to the left */
+    float: left;
+    
+    /* Add margin at the top of the info section */
+    margin-top: 30px;
+  }
+  
+  /* Styles for the sub-text */
+  .sub-txt {
+    /* Set the text color to the custom soft blue color */
+    color: var(--Soft-blue);
+  }
+  
+  /* Styles for the author image */
+  .info > img {
+    /* Make the image circular */
+    border-radius: 50%;
+    
+    /* Add a 4px white border around the image */
+    border: 2px solid var(--White);
+    
+    /* Set the width and height of the image */
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Apply responsive styles for smaller screens */
+  @media only screen and (max-width: 560px) {
+    /* Change the flex direction to column for smaller screens */
+    .card {
+      flex-direction: column;
+    }
+  }
+  
